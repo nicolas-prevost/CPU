@@ -1,0 +1,27 @@
+REG0 | REG1 | REG2 | REG3 | REG4 | REG 5 --> six 8 bits register
+ 000    001    010    011    100    101
+
+IN  | OUT --> one in/out in 8 bits
+   110
+
+
+=== immediate =============================================
+
+00 xxx xxx 				return output
+
+=== operations ============================================
+
+01 xxx 000 or				REG0/REG1 => REG2
+01 xxx 001 and				REG0/REG1 => REG2
+01 xxx 010 xor				REG0/REG1 => REG2
+01 xxx 011 add				REG0/REG1 => REG2
+01 xxx 100 not				REG0      => REG2
+
+=== copy ==================================================
+
+10 XXX xxx				XXX	  => xxx
+
+=== condition =============================================
+
+11 xxx 000 never			REG3	  => COUNT
+11 xxx 001 =0				REG3	  => COUNT
