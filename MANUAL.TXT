@@ -7,11 +7,11 @@ IN  | OUT --> one in/out in 8 bits
 
 === immediate =============================================
 
-00 xxx xxx 				return output
+00 xxx xxx
 
 === operations ============================================
 
-01 xxx 000 or				REG0/REG1 => REG2
+01 xxx 000 or	  			REG0/REG1 => REG2
 01 xxx 001 and				REG0/REG1 => REG2
 01 xxx 010 xor				REG0/REG1 => REG2
 01 xxx 011 add				REG0/REG1 => REG2
@@ -22,6 +22,7 @@ IN  | OUT --> one in/out in 8 bits
 10 XXX xxx				XXX	  => xxx
 
 === condition =============================================
-
+compare REG0 or REG0/REG1
 11 xxx 000 never			REG3	  => COUNT
-11 xxx 001 =0				REG3	  => COUNT
+11 xxx 001 =0				  REG3	  => COUNT    if REG0 == 0
+11 xxx 001 =0	   		  REG3	  => COUNT    if REG0 == 0

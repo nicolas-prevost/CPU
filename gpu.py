@@ -24,9 +24,47 @@ def gpu(self):
 
         if x>>6 == 1:
             #operations
-
+            if x & int('0b00000111', 2) == 0:
+                REG2 = REG0 | REG1
+            if x & int('0b00000111', 2) == 1:
+                REG2 = REG0 & REG1
+            if x & int('0b00000111', 2) == 2:
+                REG2 = REG0 ^ REG1
+            if x & int('0b00000111', 2) == 3:
+                REG2 = REG0 + REG1
+                if (REG2).bit_length() > 6:
+                    REG2 = REG2 - (REG2>>6<<6)
         if x>>6 == 2:
             #copy
+            value = 0
+            if x & int('0b00111000', 2) >>3 == 0:
+                value = REG0
+            if x & int('0b00111000', 2) >>3 == 1:
+                value = REG1
+            if x & int('0b00111000', 2) >>3 == 2:
+                value = REG2
+            if x & int('0b00111000', 2) >>3 == 3:
+                value = REG3
+            if x & int('0b00111000', 2) >>3 == 4:
+                value = REG4
+            if x & int('0b00111000', 2) >>3 == 5:
+                value = REG5
 
+            if x & int('0b00000111', 2) == 0:
+                REG0 = value
+            if x & int('0b00000111', 2) == 1:
+                REG1 = value
+            if x & int('0b00000111', 2) == 2:
+                REG2 = value
+            if x & int('0b00000111', 2) == 3:
+                REG3 = value
+            if x & int('0b00000111', 2) == 4:
+                REG4 = value
+            if x & int('0b00000111', 2) == 5:
+                REG5 = value
         if x>>6 == 3:
             #condition
+            if x & int('0b00000111', 2) == 0:
+                #nerver
+            if x & int('0b00000111', 2) == 1:
+                if :
