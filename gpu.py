@@ -99,19 +99,17 @@ class gpu:
         if x>>6 == 2:
             #copy
             value = 0
-            if x & int('0b00111000', 2) >>3 == 0:
+            if x & int('0b00111000', 2) == int('0b00000000', 2):
                 value = self.REG0
-            if x & int('0b00111000', 2) >>3 == 1:
+            if x & int('0b00111000', 2) == int('0b00001000', 2):
                 value = self.REG1
-            if x & int('0b00111000', 2) >>3 == 2:
-                print('form reg2')
+            if x & int('0b00111000', 2) == int('0b00010000', 2):
                 value = self.REG2
-                print('form reg2')
-            if x & int('0b00111000', 2) >>3 == 3:
+            if x & int('0b00111000', 2) == int('0b00011000', 2):
                 value = self.REG3
-            if x & int('0b00111000', 2) >>3 == 4:
+            if x & int('0b00111000', 2) == int('0b00100000', 2):
                 value = self.REG4
-            if x & int('0b00111000', 2) >>3 == 5:
+            if x & int('0b00111000', 2) == int('0b00101000', 2):
                 value = self.REG5
 
             if x & int('0b00000111', 2) == 0:
