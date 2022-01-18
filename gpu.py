@@ -69,9 +69,9 @@ class gpu:
         self.printstate()
         print('=== run ====')
         while self.counter != len(self.program):
+            time.sleep(2)
             self.executeoperation(self.program[self.counter])
             self.printstate()
-            time.sleep(2)
 
     def executeoperation(self, x): #do not forget to increase the counter at the end of the opperation if needed
         if x>>6 == 0:
@@ -100,30 +100,33 @@ class gpu:
             #copy
             value = 0
             if x & int('0b00111000', 2) >>3 == 0:
-                value = REG0
+                value = self.REG0
             if x & int('0b00111000', 2) >>3 == 1:
-                value = REG1
+                value = self.REG1
             if x & int('0b00111000', 2) >>3 == 2:
-                value = REG2
+                print('form reg2')
+                value = self.REG2
+                print('form reg2')
             if x & int('0b00111000', 2) >>3 == 3:
-                value = REG3
+                value = self.REG3
             if x & int('0b00111000', 2) >>3 == 4:
-                value = REG4
+                value = self.REG4
             if x & int('0b00111000', 2) >>3 == 5:
-                value = REG5
+                value = self.REG5
 
             if x & int('0b00000111', 2) == 0:
-                REG0 = value
+                self.REG0 = value
             if x & int('0b00000111', 2) == 1:
-                REG1 = value
+                print('ou')
+                self.REG1 = value
             if x & int('0b00000111', 2) == 2:
-                REG2 = value
+                self.REG2 = value
             if x & int('0b00000111', 2) == 3:
-                REG3 = value
+                self.REG3 = value
             if x & int('0b00000111', 2) == 4:
-                REG4 = value
+                self.REG4 = value
             if x & int('0b00000111', 2) == 5:
-                REG5 = value
+                self.REG5 = value
 
             self.counter += 1
 
