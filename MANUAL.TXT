@@ -1,13 +1,9 @@
 REG0 | REG1 | REG2 | REG3 | REG4 | REG 5 --> six 8 bits register
  000    001    010    011    100    101
 
-IN  | OUT --> one in/out in 8 bits
-   110
-
-
 === immediate =============================================
 
-00 xxx xxx
+00 xxx xxx                  xxx xxx  => REG2
 
 === operations ============================================
 
@@ -19,10 +15,10 @@ IN  | OUT --> one in/out in 8 bits
 
 === copy ==================================================
 
-10 XXX xxx				XXX	  => xxx
+10 XXX xxx				    XXX	      => xxx
 
 === condition =============================================
 compare REG0 or REG0/REG1
 11 xxx 000 never			REG3	  => COUNT
-11 xxx 001 =0				  REG3	  => COUNT    if REG0 == 0
-11 xxx 001 =0	   		  REG3	  => COUNT    if REG0 == 0
+11 xxx 001 =0			    REG3	  => COUNT    if REG0 == 0
+11 xxx 001 =0	   		    REG3	  => COUNT    if REG0 == 0

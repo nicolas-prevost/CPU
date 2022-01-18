@@ -1,4 +1,8 @@
 from gpu import *
 
 def main():
-    iter = gpu()
+    p = [int('0b0000010', 2)]
+    iter = gpu(p)
+    iter.run()
+
+main()
