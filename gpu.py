@@ -21,7 +21,7 @@ def gpu(self):
     def executeoperation(x): #do not forget to increase the counter at the end of the opperation if needed
         if x>>6 == 0:
             #immediate
-
+            return
         if x>>6 == 1:
             #operations
             if x & int('0b00000111', 2) == 0:
@@ -65,6 +65,4 @@ def gpu(self):
         if x>>6 == 3:
             #condition
             if x & int('0b00000111', 2) == 0:
-                #nerver
-            if x & int('0b00000111', 2) == 1:
-                if :
+                return

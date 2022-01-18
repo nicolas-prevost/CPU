@@ -1,4 +1,4 @@
-include gpu
+from gpu import *
 
-main():
-    
+def main():
+    iter = gpu()
