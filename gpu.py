@@ -93,6 +93,8 @@ class gpu:
                 self.REG2 = self.REG0 + self.REG1
                 if (self.REG2).bit_length() > 6:
                     self.REG2 = self.REG2 - (self.REG2>>6<<6)
+            if x & int('0b00000111', 2) == 4:
+                self.REG2 = ~self.REG0
 
             self.counter += 1
 
